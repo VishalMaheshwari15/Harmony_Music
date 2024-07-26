@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('music.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ecf0f1;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.music-player-container {
+    position: relative;
+    z-index: 2;
+}
+
+.music-player-frame {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.music-player {
+    background: rgba(44, 62, 80, 0.9);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.music-player:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7);
+}
+
+header {
+    background: linear-gradient(135deg, #34495e, #3d5a72);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease-in-out;
+}
+
+header:hover {
+    background: linear-gradient(135deg, #3d5a72, #4b6d85);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #bdc3c7;
+}
+
+.current-track {
+    background: linear-gradient(135deg, #34495e, #3d5a72);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.current-track:hover {
+    background: linear-gradient(135deg, #3d5a72, #4b6d85);
+}
+
+.progress-container {
+    background: #34495e;
+    border-radius: 15px;
+    height: 10px;
+    margin: 15px 0;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.progress {
+    background: linear-gradient(135deg, #e74c3c, #e67e22);
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.controls button {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.controls button:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.controls button:focus {
+    outline: none;
+}
+
+.controls button i {
+    pointer-events: none;
+}
+
+@media (max-width: 500px) {
+    .music-player {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    .controls button {
+        padding: 12px;
+    }
+}
